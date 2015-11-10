@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Debug</title>
+  </head>
+  <body>
+    <div id="container"></div>
+    <script src="js/three.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/debug.js"></script>
+    <script src="js/resolution.js"></script>
+    <script src="js/visualizer.js"></script>
+    <script>
+      var Instance = require('../server/instance.js');
+      var Unit = require('../server/unit.js');
+      var test_unit = new Unit(200, 200);
+      var instance = new Instance(100, 100);
+      instance.units.push(test_unit);
+      var visualizer = new Visualizer();
+      visualizer.init(Resolutions["1080p"], instance);
+      visualizer.render();
+    </script>
+  </body>
+</html>
